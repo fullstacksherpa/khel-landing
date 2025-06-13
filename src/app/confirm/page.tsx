@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 export default function ConfirmPage() {
   const searchParams = useSearchParams();
@@ -33,12 +33,14 @@ export default function ConfirmPage() {
   }, [token]);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      {status === "loading" && <p>Activating your account...</p>}
-      {status === "success" && <p>✅ Your account has been activated!</p>}
-      {status === "error" && (
-        <p>❌ Activation failed. Please check your link or try again later.</p>
-      )}
-    </div>
+    <Suspense>
+      <div style={{ padding: "2rem" }}>
+        {status === "loading" && <p>Activating your account...</p>}
+        {status === "success" && <p>✅ Your account has been activated!</p>}
+        {status === "error" && (
+          <p>❌ Activation failed. Please check your link or try again later.</p>
+        )}
+      </div>
+    </Suspense>
   );
 }
