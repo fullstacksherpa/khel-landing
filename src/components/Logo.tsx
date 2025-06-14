@@ -1,10 +1,6 @@
-import { Anton } from "next/font/google";
-
-const anton = Anton({ weight: "400", subsets: ["latin"] });
 const Logo = () => {
   return (
-    <div
-      className={`block bg-gradient-to-r from-[#02c21f] via-[#1b9335] to-[#198e61] bg-clip-text text-transparent ${anton.className}`}>
+    <div className="text-4xl md:text-5xl mt-6 mb-6 font-bold md:leading-[3rem] lg:leading-[3.5rem] bg-gradient-to-r from-[#1f923f] via-[#10ca42] to-[#027428] bg-clip-text text-transparent">
       <div className="lg:text-3xl tracking-widest pl-5 text-xl">Khel</div>
     </div>
   );

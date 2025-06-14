@@ -12,12 +12,15 @@ export type navItemType = {
 
 const Navbar = () => {
   return (
-    <div className="sticky top-0 z-40 w-[100vw]  flex justify-between lg:space-around items-center py-2 border-b backdrop-blur-lg  bg-transparent px-2 lg:px-16 overflow-x-hidden">
+    <div className="sticky top-0 z-40 w-[95vw] mx-auto flex justify-between lg:space-around items-center py-2 border-b backdrop-blur-lg  bg-transparent px-2 lg:px-16 overflow-x-hidden rounded-br-3xl rounded-bl-3xl hover:border-green-300 ">
       <div className="w-full lg:flex hidden gap-x-20 items-center">
         <div className="relative z-20 flex items-center">
           <Link
             href="/"
-            className={cn(buttonVariants({ variant: "link" }), "text-sm tracking-tighter")}>
+            className={cn(
+              buttonVariants({ variant: "link" }),
+              "text-sm tracking-tighter hover:no-underline"
+            )}>
             <Logo />
           </Link>
         </div>

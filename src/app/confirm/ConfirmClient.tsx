@@ -1,4 +1,3 @@
-// app/confirm/ConfirmClient.tsx
 "use client";
 
 import { useSearchParams } from "next/navigation";
@@ -16,6 +15,7 @@ export default function ConfirmClient() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/activate/${token}`, {
           method: "PUT",
         });
+        console.log(process.env.NEXT_PUBLIC_API_URL, "/users/activate/");
         setStatus(res.status === 204 ? "success" : "error");
       } catch {
         setStatus("error");
@@ -24,10 +24,24 @@ export default function ConfirmClient() {
   }, [token]);
 
   return (
-    <div style={{ padding: "2rem" }}>
-      {status === "loading" && <p>Activating…</p>}
-      {status === "success" && <p>✅ Activated!</p>}
-      {status === "error" && <p>❌ Activation failed.</p>}
+    <div className="flex h-[70vh] items-center justify-center p-20">
+      {status === "loading" && (
+        <p className="text-xl tracking-wider text-gray-800">
+          ⏳ Hang tight… we&apos;re activating your account.
+        </p>
+      )}
+
+      {status === "success" && (
+        <p className="text-xl tracking-wider text-gray-800">
+          ✅ Your email has been successfully verified. You can now enjoy full access!
+        </p>
+      )}
+      {status === "error" && (
+        <p className="text-xl tracking-wider text-gray-800">
+          ❌🤦‍♂️ Oops! Something went wrong with activation. The activation link may have expired or
+          is invalid. Please try registering again.
+        </p>
+      )}
     </div>
   );
 }

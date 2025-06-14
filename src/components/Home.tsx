@@ -72,7 +72,7 @@ const Hero = () => {
             <motion.div
               ref={storeScope}
               initial={{ opacity: 0, y: 900, x: 0 }}
-              className="flex mt-8 mb-8 items-center space-x-4">
+              className="flex mt-8 mb-8 items-center justify-center space-x-4 mx-auto">
               <Image
                 src="/images/gp.png"
                 alt="Play store"
@@ -90,7 +90,10 @@ const Hero = () => {
             </motion.div>
           </div>
           {/*Image here */}
-          <motion.div ref={ImageDesignScope} initial={{ opacity: 0, y: 0, x: 900 }} className="">
+          <motion.div
+            ref={ImageDesignScope}
+            initial={{ opacity: 0, y: 0, x: 900 }}
+            className="mx-auto">
             <Image src="/images/hero.png" alt="hero" width={400} height={200} />
           </motion.div>
         </div>
