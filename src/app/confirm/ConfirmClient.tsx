@@ -12,10 +12,9 @@ export default function ConfirmClient() {
     if (!token) return;
     (async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/activate/${token}`, {
+        const res = await fetch(`https://api.gocloudnepal.com/v1/users/activate/${token}`, {
           method: "PUT",
         });
-        console.log(process.env.NEXT_PUBLIC_API_URL, "/users/activate/");
         setStatus(res.status === 204 ? "success" : "error");
       } catch {
         setStatus("error");

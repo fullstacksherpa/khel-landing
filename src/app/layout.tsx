@@ -34,7 +34,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="icon" href="/fevicon.png" sizes="any" />
+      <link rel="icon" href="/gocloudlogo.png" sizes="any" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/gocloudlogo.png" />
       <body className={`min-h-screen ${firaCode.className} overflow-x-hidden`}>
         <Navbar />
         <main>{children}</main>

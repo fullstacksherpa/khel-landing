@@ -18,7 +18,7 @@ export default function ResetPasswordClient() {
     setStatus("loading");
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/authentication/reset-password`, {
+      const res = await fetch("https://api.gocloudnepal.com/v1/authentication/reset-password", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token, password }),
