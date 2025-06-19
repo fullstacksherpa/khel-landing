@@ -94,7 +94,7 @@ const Hero = () => {
             ref={ImageDesignScope}
             initial={{ opacity: 0, y: 0, x: 900 }}
             className="mx-auto">
-            <Image src="/images/hero.png" alt="hero" width={400} height={200} />
+            <Image src="/images/venue.png" alt="hero" width={400} height={200} />
           </motion.div>
         </div>
       </div>

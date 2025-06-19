@@ -32,7 +32,7 @@ const UpcomingFeatures = () => {
           }}
           className="mx-auto">
           <Image
-            src="/images/hero.png"
+            src="/images/time.png"
             alt="Upcoming Features"
             width={400}
             height={350}
