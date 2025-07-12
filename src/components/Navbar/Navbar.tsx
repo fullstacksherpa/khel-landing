@@ -34,7 +34,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex gap-x-4 items-center mr-2">
-        <Link href="/sign-up" className=" tracking-tighter">
+        <Link href="/" className=" tracking-tighter">
           <Button className="lg:mx-2 w-full group mx-1 bg-green-700 hover:bg-green-800" size="sm">
             <span className="lg:mr-2 mr-1">Download Now</span>
             <svg

@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appID": "Z2CLUKP3BF.com.devSherpa.khel",
+        "paths": [
+          "/",
+          "/games/*",
+          "/venue/*",
+          "/login",
+          "/register"
+        ]
+      }
+    ]
+  }
+}
