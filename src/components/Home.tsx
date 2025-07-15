@@ -73,20 +73,31 @@ const Hero = () => {
               ref={storeScope}
               initial={{ opacity: 0, y: 900, x: 0 }}
               className="flex mt-8 mb-8 items-center justify-center space-x-4 mx-auto">
-              <Image
-                src="/images/gp.png"
-                alt="Play store"
-                width={150}
-                height={150}
-                className="object-contain"
-              />
-              <Image
-                src="/images/as.png"
-                alt="App store"
-                width={150}
-                height={150}
-                className="object-contain"
-              />
+              <a
+                href="https://play.google.com/store/apps/details?id=your.android.package.name"
+                target="_blank"
+                rel="noopener noreferrer">
+                <Image
+                  src="/images/gp.png"
+                  alt="Play store"
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+              </a>
+
+              <a
+                href="https://apps.apple.com/app/id6747565055"
+                target="_blank"
+                rel="noopener noreferrer">
+                <Image
+                  src="/images/as.png"
+                  alt="App store"
+                  width={150}
+                  height={150}
+                  className="object-contain"
+                />
+              </a>
             </motion.div>
           </div>
           {/*Image here */}

@@ -10,14 +10,24 @@ export default function ConfirmClient() {
 
   useEffect(() => {
     if (!token) return;
+
     (async () => {
       try {
         const res = await fetch(`https://api.gocloudnepal.com/v1/users/activate/${token}`, {
           method: "PUT",
         });
-        setStatus(res.status === 204 ? "success" : "error");
+        const success = res.status === 204;
+        setStatus(success ? "success" : "error");
+
+        // 🔁 Redirect after 2 seconds
+        setTimeout(() => {
+          window.location.href = `khel://login?status=${success ? "success" : "error"}`;
+        }, 2000);
       } catch {
         setStatus("error");
+        setTimeout(() => {
+          window.location.href = `khel://login?status=error`;
+        }, 2000);
       }
     })();
   }, [token]);
@@ -32,13 +42,12 @@ export default function ConfirmClient() {
 
       {status === "success" && (
         <p className="text-xl tracking-wider text-gray-800">
-          ✅ Your email has been successfully verified. You can now enjoy full access!
+          ✅ Your email has been successfully verified. Redirecting to app...
         </p>
       )}
       {status === "error" && (
         <p className="text-xl tracking-wider text-gray-800">
-          ❌🤦‍♂️ Oops! Something went wrong with activation. The activation link may have expired or
-          is invalid. Please try registering again.
+          ❌ Oops! Something went wrong. Redirecting to app...
         </p>
       )}
     </div>
